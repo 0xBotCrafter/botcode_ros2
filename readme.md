@@ -14,5 +14,5 @@
 ## 3 作者
 0xBotCrafter: zhouzge@foxmail.com
 QQ群：xxx 
-Zhihu,
-BiliBili,
+Zhihu：
+BiliBili:
