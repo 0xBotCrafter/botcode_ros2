@@ -109,8 +109,8 @@ def generate_launch_description():
            event_handler=launch.event_handlers.OnProcessExit(
                target_action=action_load_joint_state_controller,
                on_exit=[
-                        # action_load_diff_drive_controller,
-                        action_load_effort_controller,
+                        action_load_diff_drive_controller,
+                        # action_load_effort_controller,
                         # action_rviz2,
                         ],
            )
