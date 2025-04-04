@@ -22,5 +22,8 @@
   "cSpell.words": [
     "bringup",
     "rviz"
-  ]
+  ],
+  "files.associations": {
+    "iostream": "cpp"
+  }
 }

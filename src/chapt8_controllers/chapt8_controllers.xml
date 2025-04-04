@@ -1,0 +1,9 @@
+<library path="chapt8_controllers">
+	<class name="controllers/SpinController" type="controllers::SpinController" base_class_type="controllers::BaseController">
+	    <description>Spin Controller</description>
+	</class>
+	
+	<class name="controllers/MoveController" type="controllers::MoveController" base_class_type="controllers::BaseController">
+	    <description>Move Controller</description>
+	</class>
+</library>

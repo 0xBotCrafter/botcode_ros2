@@ -1,23 +1,24 @@
 {
-  "configurations": [
-    {
-      "browse": {
-        "databaseFilename": "${default}",
-        "limitSymbolsToIncludedHeaders": false
-      },
-      "includePath": [
-        "/home/zgzhou/botcode_ros2/install/chapt4_interfaces/include/**",
-        "/home/zgzhou/botcode_ros2/install/chapt3_status_interfaces/include/**",
-        "/opt/ros/humble/include/**",
-        "/home/zgzhou/botcode_ros2/src/chapt2_3_pkg_cpp/include/**",
-        "/usr/include/**"
-      ],
-      "name": "ROS",
-      "intelliSenseMode": "gcc-x64",
-      "compilerPath": "/usr/bin/gcc",
-      "cStandard": "gnu11",
-      "cppStandard": "c++14"
-    }
-  ],
-  "version": 4
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "${default}",
+                "limitSymbolsToIncludedHeaders": false
+            },
+            "includePath": [
+                "/opt/ros/humble/include/**",
+                "/usr/include/**",
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/src/chapt8_controllers/include",
+                "${workspaceFolder}/src/chapt8_custom_planner/include",
+                "${workspaceFolder}/src/chapt8_custom_controller/include"
+            ],
+            "name": "ROS",
+            "intelliSenseMode": "gcc-x64",
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "gnu11",
+            "cppStandard": "c++14"
+        }
+    ],
+    "version": 4
 }

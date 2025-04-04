@@ -1,6 +1,6 @@
 # 【Bot手册-ROS2】源码(点亮Star不迷路~)
 ## 1 介绍
-本仓库是【Bot手册-ROS2】的源码仓库，用于学习参考和方便代码复用拷贝。
+本仓库是【Bot手册-ROS2】的学习源码仓库，用于学习参考和方便代码复用拷贝。
 
 【Bot手册-ROS2】原链接：项目尚未完成，请等待更新，感谢支持!
 
@@ -25,6 +25,7 @@ sudo apt install ros-$ROS_DISTRO-gazebo-ros-pkgs
 sudo apt install ros-$ROS_DISTRO-gazebo-ros2-control
 sudo apt install ros-$ROS_DISTRO-navigation2
 sudo apt install ros-$ROS_DISTRO-nav2-bringup
+sudo apt install ros-$ROS_DISTRO-pluginlib -y
 ```
 ### 2.3 编译
 ```shell
