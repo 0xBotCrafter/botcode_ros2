@@ -1,0 +1,27 @@
+#include <Arduino.h>
+
+#define TRIG 27
+#define ECHO 21
+
+void setup()
+{
+  // put your setup code here, to run once:
+  Serial.begin(115200);
+  pinMode(TRIG, OUTPUT); // 设置输出模式
+  pinMode(ECHO, INPUT);  // 设置输入模式
+}
+
+void loop()
+{
+  // 发出声波
+  digitalWrite(TRIG, HIGH);
+  delayMicroseconds(10); // 延时10us
+  digitalWrite(TRIG, LOW);
+
+  // 读取传播时间
+  double dt = pulseIn(ECHO, HIGH);  // 读取高电平时间 us
+  float distance = dt * 0.0343 / 2; // 计算距离 cm
+
+  Serial.printf("Distance: %f cm, dt: %f us\n", distance, dt);
+  delay(1000);
+}

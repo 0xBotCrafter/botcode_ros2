@@ -1,0 +1,29 @@
+{
+  "python.autoComplete.extraPaths": [
+    "/home/zgzhou/botcode_ros2/install/chapt5_python_tf/lib/python3.10/site-packages",
+    "/home/zgzhou/botcode_ros2/install/chapt4_python_srv/lib/python3.10/site-packages",
+    "/home/zgzhou/botcode_ros2/install/chapt4_interfaces/local/lib/python3.10/dist-packages",
+    "/home/zgzhou/botcode_ros2/install/chapt3_status_publisher/lib/python3.10/site-packages",
+    "/home/zgzhou/botcode_ros2/install/chapt3_status_interfaces/local/lib/python3.10/dist-packages",
+    "/home/zgzhou/botcode_ros2/install/chapt2_2_pkg_py/lib/python3.10/site-packages",
+    "/opt/ros/humble/lib/python3.10/site-packages",
+    "/opt/ros/humble/local/lib/python3.10/dist-packages"
+  ],
+  "python.analysis.extraPaths": [
+    "/home/zgzhou/botcode_ros2/install/chapt5_python_tf/lib/python3.10/site-packages",
+    "/home/zgzhou/botcode_ros2/install/chapt4_python_srv/lib/python3.10/site-packages",
+    "/home/zgzhou/botcode_ros2/install/chapt4_interfaces/local/lib/python3.10/dist-packages",
+    "/home/zgzhou/botcode_ros2/install/chapt3_status_publisher/lib/python3.10/site-packages",
+    "/home/zgzhou/botcode_ros2/install/chapt3_status_interfaces/local/lib/python3.10/dist-packages",
+    "/home/zgzhou/botcode_ros2/install/chapt2_2_pkg_py/lib/python3.10/site-packages",
+    "/opt/ros/humble/lib/python3.10/site-packages",
+    "/opt/ros/humble/local/lib/python3.10/dist-packages"
+  ],
+  "cSpell.words": [
+    "bringup",
+    "rviz"
+  ],
+  "files.associations": {
+    "iostream": "cpp"
+  }
+}

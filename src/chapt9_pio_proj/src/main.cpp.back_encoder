@@ -1,0 +1,49 @@
+#include <Arduino.h>
+#include <Wire.h>
+#include <Esp32McpwmMotor.h>
+#include <Esp32PcntEncoder.h>
+
+Esp32McpwmMotor motors; // 创建一个数组用于存储两个电机
+Esp32PcntEncoder encoders[2]; // 创建一个数组用于存储两个编码器
+
+int64_t last_ticks[2];
+int64_t last_update_time;
+int32_t delta_ticks[2];
+float current_speeds[2];
+
+void setup()
+{
+  // 1.初始化串口
+  Serial.begin(115200); // 初始化串口通信，设置通信速率为115200
+
+  // 2.设置编码器
+  encoders[0].init(0, 32, 33); // 初始化第一个编码器，使用GPIO 32和33连接
+  encoders[1].init(1, 26, 25); // 初始化第二个编码器，使用GPIO 26和25连接
+
+  // 3.设置电机
+  motors.attachMotor(0, 22, 23); // 初始化第一个电机，使用GPIO 连接
+  motors.attachMotor(1, 12, 13); // 初始化第二个电机，使用GPIO 连接
+  motors.updateMotorSpeed(0, 90); // 设置第一个电机的速度
+  motors.updateMotorSpeed(1, -90); // 设置第二个电机的速度
+}
+
+void loop()
+{
+  delay(10); // 等待10毫秒
+  // 计算dt
+  uint64_t dt = millis() - last_update_time;
+  //计算编码器差值
+  delta_ticks[0] = encoders[0].getTicks() - last_ticks[0];
+  delta_ticks[1] = encoders[1].getTicks() - last_ticks[1];
+  // 计算速度
+  current_speeds[0] = float(delta_ticks[0] * 0.1051566) / dt;
+  current_speeds[1] = float(delta_ticks[1] * 0.1051566) / dt;
+
+  // 更新
+  last_update_time = millis();
+  last_ticks[0] = encoders[0].getTicks();
+  last_ticks[1] = encoders[1].getTicks();
+
+  // 输出
+  Serial.printf("speed1=%f m/s,speed2=%f m/s\n", current_speeds[0], current_speeds[1]);
+}
