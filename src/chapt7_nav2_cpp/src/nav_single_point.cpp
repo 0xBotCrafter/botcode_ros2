@@ -8,10 +8,6 @@ using NavigationAction = nav2_msgs::action::NavigateToPose; // 定义导航动�
 class NavToPoseClient : public rclcpp::Node
 {
 public:
-    using NavigationActionClient = rclcpp_action::Client<NavigationAction>; // 定义导航动作客户端类型
-    using NavigationActionGoalHandle =
-        rclcpp_action::ClientGoalHandle<NavigationAction>; // 定义导航动作目标句柄类型
-
     NavToPoseClient() : Node("nav_to_pose_client")
     {
         // 创建导航动作客户端
@@ -36,7 +32,7 @@ public:
             rclcpp_action::Client<NavigationAction>::SendGoalOptions();
         // 设置请求目标结果回调函数
         send_goal_options.goal_response_callback =
-            [this](NavigationActionGoalHandle::SharedPtr goal_handle)
+            [this](rclcpp_action::ClientGoalHandle<NavigationAction>::SharedPtr goal_handle)
         {
             if (goal_handle)
             {
@@ -46,7 +42,7 @@ public:
         // 设置移动过程反馈回调函数
         send_goal_options.feedback_callback =
             [this](
-                NavigationActionGoalHandle::SharedPtr goal_handle,
+                rclcpp_action::ClientGoalHandle<NavigationAction>::SharedPtr goal_handle,
                 const std::shared_ptr<const NavigationAction::Feedback> feedback)
         {
             (void)goal_handle; // 假装调用，避免 warning: unused
@@ -55,7 +51,7 @@ public:
         };
         // 设置执行结果回调函数
         send_goal_options.result_callback =
-            [this](const NavigationActionGoalHandle::WrappedResult &result)
+            [this](const rclcpp_action::ClientGoalHandle<NavigationAction>::WrappedResult &result)
         {
             if (result.code == rclcpp_action::ResultCode::SUCCEEDED)
             {
@@ -66,7 +62,7 @@ public:
         action_client_->async_send_goal(goal_msg, send_goal_options);
     }
 
-    NavigationActionClient::SharedPtr action_client_;
+    rclcpp_action::Client<NavigationAction>::SharedPtr action_client_;
 };
 
 int main(int argc, char **argv)
